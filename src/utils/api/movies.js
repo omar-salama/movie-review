@@ -15,3 +15,12 @@ export const getMovieDetails = async (id) => {
   return movies.data;
 }
 
+export const submitReview = (id, body) => {
+  return axios.post(`http://localhost:3001/movies/${id}/reviews`, body);
+}
+
+export const getReviews = async (id) => {
+  const res = await axios.get(`http://localhost:3001/movies/${id}/reviews`);
+  return res.data;
+}
+

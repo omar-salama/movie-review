@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails } from '../utils/api/movies';
 import getImageUrl from '../utils/getImageUrl';
-import AddReview from '../components/MovieDetails/AddReview';
+import Reviews from '../components/MovieDetails/Reviews';
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -14,7 +14,6 @@ const MovieDetails = () => {
       setLoading(true);
       try {
         const data = await getMovieDetails(id);
-        console.log(data);
         setMovie(data);
       } catch (error) {
         console.error('Error fetching movie details:', error);
@@ -62,7 +61,7 @@ const MovieDetails = () => {
           <span className="font-bold">Average Rating: </span>
           {movie.vote_average}
         </p>
-        <AddReview movieId={id} />
+        <Reviews movieId={id} />
       </div>
     </div>
   );
