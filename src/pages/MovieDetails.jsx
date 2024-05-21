@@ -57,7 +57,7 @@ const MovieDetails = () => {
           <span className="font-bold">Genres: </span>
           {movie.genres.map((obj) => obj['name']).join(', ')}
         </p>
-        <p className="text-gray-600">
+        <p className="text-gray-600 mb-4">
           <span className="font-bold">Average Rating: </span>
           {movie.vote_average}
         </p>

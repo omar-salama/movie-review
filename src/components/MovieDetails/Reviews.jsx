@@ -31,26 +31,25 @@ const Review = ({ movieId }) => {
       </div>
     );
 
-  if (!reviews.length)
-    return (
-      <div className="flex justify-center items-center h-40 text-xl text-gray-600">
-        No reviews yet for this film.
-      </div>
-    );
-
   return (
     <div className="p-4 bg-white shadow-md rounded-lg">
-      <h3 className="text-2xl font-bold mb-4 text-gray-800">Reviews</h3>
-      <ul className="space-y-4">
-        {reviews.map((review) => (
-          <li key={review._id} className="p-4 border-b border-gray-200">
-            <p className="text-lg font-semibold text-gray-700 capitalize">
-              {review.name} said:
-            </p>
-            <p className="text-gray-600">{review.review}</p>
-          </li>
-        ))}
-      </ul>
+      <h3 className="text-2xl font-bold text-gray-800">Reviews</h3>
+      {reviews?.length > 0 ? (
+        <ul className="space-y-4">
+          {reviews.map((review) => (
+            <li key={review._id} className="p-4 border-b border-gray-200">
+              <p className="text-lg font-semibold text-gray-700 capitalize">
+                {review.name} said:
+              </p>
+              <p className="text-gray-600">{review.review}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="text-lg text-gray-600">
+          No reviews yet for this film.
+        </div>
+      )}
       <h3 className="text-lg font-bold mt-4 mb-3 text-gray-800">Add yours!</h3>
       <AddReview movieId={movieId} onNewReview={setIsNewReviewAdded} />
     </div>
