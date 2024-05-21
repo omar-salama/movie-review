@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieDetails } from '../utils/api/movies';
 import getImageUrl from '../utils/getImageUrl';
+import AddReview from '../components/MovieDetails/AddReview';
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -61,6 +62,7 @@ const MovieDetails = () => {
           <span className="font-bold">Average Rating: </span>
           {movie.vote_average}
         </p>
+        <AddReview movieId={id} />
       </div>
     </div>
   );
