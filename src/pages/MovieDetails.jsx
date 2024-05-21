@@ -41,7 +41,7 @@ const MovieDetails = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-2/3">
+      <div className="bg-white p-6 rounded-lg shadow-lg md:w-2/3">
         <img
           src={getImageUrl(movie.poster_path)}
           alt={movie.title}
