@@ -17,7 +17,7 @@ const MovieList = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
       {movies.map((movie) => (
-        <Link to={`/movie/${movie.id}`} key={movie.id}>
+        <Link to={`/movies/${movie.id}`} key={movie.id}>
           <MovieItem movie={movie} key={movie.id} />
         </Link>
       ))}
